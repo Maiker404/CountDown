@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Pacifico|Prompt|ZCOOL+KuaiLe');
+@font-face {
+    font-family: clocker;
+    src: url('../fonts/alarm\ clock.ttf');
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    transition: all .6s ease-in-out;
+    -webkit-transition: all .6s ease-in-out;
+    -moz-transition: all .6s ease-in-out;
+    -ms-transition: all .6s ease-in-out;
+    -o-transition: all .6s ease-in-out;
+}
+
+:root {
+    /* Tamanhos de fontes */
+    --tfont1: 15px;
+    --tfont2: 18px;
+    --tfont3: 20px;
+    --tfont4: 25px;
+    --tfont5: 30px;
+    /* Fontes */
+    --font1: 'Fira Sans', sans-serif;
+    --font2: 'ZCOOL KuaiLe', cursive;
+    --font3: 'Pacifico', cursive;
+    --font4: 'Prompt', sans-serif;
+    --font5: 'clocker', sans-serif;
+    /* Cores */
+    --cor1: #dddddd;
+    --cor2: #2c2c2c;
+    --cor3: #868686;
+}
