@@ -2,10 +2,10 @@ $(document).ready(function() {
     $('#zona').load("../zonas.php");
     var dateinfo = '2019-01-01';
     var zona = $('#zona').val();
-    var hora = "00:00";
+    var hora = "00:00:00";
 
     function clocker() {
-        $('div.date').text(dateinfo.substring(8, 10) + "/" + dateinfo.substring(5, 7) + "/" + dateinfo.substring(0, 4));
+        $('div.date').text(dateinfo);
 
         var nextYear = moment.tz(dateinfo + " " + hora, zona);
 
@@ -20,7 +20,7 @@ $(document).ready(function() {
                 '<div class="display day"><h4>' + day + ' </h4>dias</div>' +
                 '<div class="display hour"><h4>' + hour + ' </h4>horas</div>' +
                 '<div class="display minute"><h4>' + minute + ' </h4>minutos</div>' +
-                '<div class="display second"><h4>' + second + ' </h4>segundos restantes!</div>');
+                '<div class="display second"><h4>' + second + ' </h4>segundos</div>');
         });
     }
     $('#data').val(dateinfo);
@@ -55,4 +55,30 @@ $(document).ready(function() {
         }
     }
     fundo();
+    $('#data').mask('0000-00-00');
+    $('#hora').mask('00:00:00');
+    $('div.conf').click(function() {
+        $('div#options').toggleClass("ativated-change");
+        if($('div#options').hasClass("ativated-change")){
+            $('#icon').removeClass("fa-cog");
+            $('#icon').addClass("fa-times");
+        }else{
+            $('#icon').removeClass("fa-times");
+            $('#icon').addClass("fa-cog");
+        }
+    });
+    $('div.icon-git').click(function() {
+        $('div#git').toggleClass("ativated-git");
+        if($('div#git').hasClass("ativated-git")){
+            $('#icon-git').removeClass("fa-github");
+            $('#icon-git').removeClass("fab");
+            $('#icon-git').addClass("fa-times");
+            $('#icon-git').addClass("fa");
+        }else{
+            $('#icon-git').removeClass("fa-times");
+            $('#icon-git').removeClass("fa");
+            $('#icon-git').addClass("fab");
+            $('#icon-git').addClass("fa-github");
+        }
+    });
 });
